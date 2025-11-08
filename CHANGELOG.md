@@ -1,5 +1,29 @@
 # 🧾 Changelog – Inventori Pro (CodeIgniter 4)
 
+## [v0.3.0] – 2025-11-08
+### ✨ Penambahan
+- Menambahkan sistem autentikasi berbasis database menggunakan `UserModel` dan hashing SHA-256.
+- Menambahkan `migration` dan `seeder` untuk tabel `users` (`admin` dan `user1` sebagai akun awal).
+- Menambahkan halaman `dashboard` dummy sebagai playground awal untuk Petugas Gudang.
+- Menambahkan tombol `Login` pada halaman `beranda.php` yang mengarah ke form login.
+- Menambahkan fitur `Logout` untuk mengakhiri sesi dan kembali ke halaman login.
+
+### 🔒 Proteksi & Akses
+- Menerapkan proteksi akses pada halaman `dashboard` agar hanya dapat diakses oleh user yang sudah login.
+- Menambahkan validasi login dengan session `logged_in` untuk menjaga keamanan akses.
+
+### 🔧 Perubahan
+- Mengarahkan hasil login sukses ke `/dashboard` alih-alih halaman beranda publik.
+- Menyesuaikan alur logout agar selalu menghapus session dan redirect ke `/login`.
+- Menyesuaikan file `Routes.php` untuk menambahkan route baru `/dashboard` dan `/logout`.
+
+### 🧹 Pemeliharaan
+- Membersihkan data manual lama pada tabel `users` sebelum menjalankan migration & seeder baru.
+- Menyelaraskan namespace dan struktur folder (`Controllers`, `Models`, `Views`) sesuai standar CI4.
+- Memastikan login, logout, dan routing berjalan lancar pada server lokal (`php spark serve`).
+
+---
+
 ## [v0.2.1] – 2025-11-07
 ### ✨ Penambahan
 - Menerapkan tampilan Bootstrap 4 yang bersih untuk halaman `beranda.php` dan `login.php`.

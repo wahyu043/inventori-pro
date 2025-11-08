@@ -31,5 +31,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand font-weight-bold" href="/">INVENTORI PRO</a>
+            <a class="btn btn-light" href="<?= base_url('login'); ?>">Login</a>
         </div>
     </nav>

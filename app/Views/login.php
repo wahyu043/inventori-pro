@@ -4,13 +4,14 @@
     <div class="card shadow-sm p-4" style="width: 350px;">
         <h4 class="text-center text-primary mb-4">Login Inventori Pro</h4>
 
-        <?php if (session()->getFlashdata('error')): ?>
-            <div class="alert alert-danger"><?= session()->getFlashdata('error'); ?></div>
+        <?php if (session()->getFlashdata('success')): ?>
+            <p style="color: green;"><?= session()->getFlashdata('success'); ?></p>
         <?php endif; ?>
 
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="alert alert-success"><?= session()->getFlashdata('success'); ?></div>
+        <?php if (session()->getFlashdata('error')): ?>
+            <p style="color: red;"><?= session()->getFlashdata('error'); ?></p>
         <?php endif; ?>
+
 
         <form method="post" action="/login">
             <div class="form-group mb-3">

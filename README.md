@@ -86,7 +86,7 @@ Database dummy akan diunggah terpisah (`inventory_pro.sql`) dan mencakup tabel-t
 ## 🚀 Cara Menjalankan
 1. Clone repository ini:
    ```bash
-   git clone [https://github.com/wahyu043/inventori-pro](https://github.com/wahyu043/inventori-pro)
+   git clone https://github.com/wahyu043/inventori-pro
    cd inventori-pro
    ```
 

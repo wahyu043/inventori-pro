@@ -9,3 +9,5 @@ $routes->get('/', 'Beranda::index');
 $routes->get('/', 'Pages::welcome');
 $routes->get('/login', 'Login::index');
 $routes->post('/login', 'Login::auth');
+$routes->get('/logout', 'Login::logout');
+$routes->get('/dashboard', 'Dashboard::index');
