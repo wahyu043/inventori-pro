@@ -11,5 +11,6 @@
         <h1 class="display-4 text-primary mb-3">Selamat datang di INVENTORI PRO</h1>
         <p class="lead text-secondary">Aplikasi Cek Stok Barang Opname</p>
     </div>
+</div>
 
-    <?= $this->include('layouts/footer'); ?>
+<?= $this->include('layouts/footer'); ?>

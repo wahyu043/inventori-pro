@@ -1,8 +1,7 @@
-</div> <!-- end container -->
-
-<footer class="bg-primary text-white text-center py-3 w-100">
-    &copy; <?= date('Y'); ?> Wahyu Mahmudiyanto. All rights reserved.
+<footer class="bg-primary text-white text-center py-3 mt-auto">
+    <small>© 2025 Wahyu Mahmudiyanto. All rights reserved.</small>
 </footer>
+
 
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

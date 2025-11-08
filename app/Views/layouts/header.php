@@ -10,27 +10,21 @@
     <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        footer {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 14px;
-            margin-top: 40px;
-        }
-    </style>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand font-weight-bold" href="/">INVENTORI PRO</a>
-            <a class="btn btn-light" href="<?= base_url('login'); ?>">Login</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex justify-content-between align-items-center px-3">
+        <a class="navbar-brand font-weight-bold" href="/">INVENTORI PRO</a>
+
+        <div class="d-flex align-items-center">
+            <?php if (session()->get('logged_in')): ?>
+                <span class="text-white mr-3">Halo, <?= esc(session()->get('name')); ?>!</span>
+                <a href="/logout" class="btn btn-light">Logout</a>
+            <?php else: ?>
+                <a href="/login" class="btn btn-light">Login</a>
+            <?php endif; ?>
         </div>
     </nav>

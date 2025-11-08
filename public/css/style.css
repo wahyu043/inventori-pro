@@ -1,0 +1,21 @@
+/* --- Sticky Footer Universal --- */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    /* konten utama isi ruang tengah */
+}
+
+footer {
+    margin-top: auto;
+}

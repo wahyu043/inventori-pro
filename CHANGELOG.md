@@ -1,5 +1,33 @@
 # 🧾 Changelog – Inventori Pro (CodeIgniter 4)
 
+## [v0.4.0] – 2025-11-08
+### ✨ Penambahan
+- Menambahkan sistem **proteksi login (AuthFilter)** agar halaman internal hanya bisa diakses setelah login.
+- Menambahkan **Dashboard utama** sebagai pusat navigasi aplikasi Inventori Pro.
+- Dashboard menampilkan data dinamis:
+  - Total Barang (dari tabel `barang`)
+  - Total Barang Masuk (dari tabel `barang_masuk`)
+  - Role pengguna aktif (admin/user)
+- Menambahkan tampilan **sapaan pengguna** di header dan dashboard.
+- Menambahkan tombol navigasi cepat ke *Barang Masuk* dan *Data Barang*.
+
+### 🔧 Perubahan
+- Mengalihkan redirect login sukses ke `/dashboard` agar user langsung masuk ke halaman utama sistem.
+- Menyusun ulang struktur view `dashboard/index.php` agar modular dan siap dikembangkan.
+- Mengatur tampilan header agar tombol Login/Logout dan sapaan user tampil dinamis sesuai status session.
+
+### 🎨 UI & Layout
+- Memperbarui tampilan Dashboard dengan 3 kartu statistik berwarna (Bootstrap 4).
+- Menyempurnakan navbar dan tombol user di kanan atas agar sejajar dan responsif.
+- Menambahkan footer sticky agar tetap berada di bagian bawah halaman.
+
+### 🧹 Pemeliharaan
+- Merapikan struktur folder `app/Views/dashboard/` untuk kesiapan pengembangan fitur berikutnya.
+- Memastikan integrasi data dari model `BarangModel` dan `BarangMasukModel` berjalan lancar.
+- Memastikan seluruh route dilindungi `AuthFilter` (terutama `/dashboard` dan `/barang-masuk`).
+
+---
+
 ## [v0.3.0] – 2025-11-08
 ### ✨ Penambahan
 - Menambahkan sistem autentikasi berbasis database menggunakan `UserModel` dan hashing SHA-256.
