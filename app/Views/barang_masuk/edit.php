@@ -23,10 +23,6 @@
             <label>No Faktur</label>
             <input type="text" name="no_faktur" class="form-control" value="<?= esc($barang['no_faktur']); ?>">
         </div>
-        <div class="form-group">
-            <label>Stok</label>
-            <input type="number" name="stok" class="form-control" value="<?= esc($barang['stok']); ?>">
-        </div>
         <button type="submit" class="btn btn-primary">Update</button>
         <a href="/barang-masuk" class="btn btn-secondary">Kembali</a>
     </form>

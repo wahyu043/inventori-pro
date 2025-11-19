@@ -24,10 +24,10 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card text-white bg-dark mb-3">
+            <div class="card text-white bg-danger mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Role Aktif</h5>
-                    <h3 class="card-text"><?= esc(ucfirst($role)); ?></h3>
+                    <h5 class="card-title">Total Barang Keluar</h5>
+                    <h3 class="card-text"><?= esc($totalKeluar); ?></h3>
                 </div>
             </div>
         </div>
@@ -36,6 +36,7 @@
     <hr>
     <div class="mt-3">
         <a href="/barang-masuk" class="btn btn-primary">Kelola Barang Masuk</a>
+        <a href="/barang-keluar" class="btn btn-warning text-white">Kelola Barang Keluar</a>
         <a href="/barang" class="btn btn-outline-secondary">Data Barang</a>
     </div>
 </div>

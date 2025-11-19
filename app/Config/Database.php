@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
+        'hostname'     => '127.0.0.1',
+        'username'     => 'root',
+        'password'     => 'root',
+        'database'     => 'inventori_pro',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -49,6 +49,7 @@ class Database extends Config
             'datetime' => 'Y-m-d H:i:s',
             'time'     => 'H:i:s',
         ],
+        // 'socket'       => '/opt/local/var/run/mysql57/mysqld.sock',
     ];
 
     //    /**

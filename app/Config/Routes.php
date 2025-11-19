@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
 $routes->get('/', 'Beranda::index');
 $routes->get('/', 'Pages::welcome');
 $routes->get('/login', 'Login::index');
@@ -29,4 +30,12 @@ $routes->group('barang-masuk', ['namespace' => 'App\Controllers'], function ($ro
     $routes->get('edit/(:num)', 'BarangMasuk::edit/$1');
     $routes->post('update/(:num)', 'BarangMasuk::update/$1');
     $routes->get('delete/(:num)', 'BarangMasuk::delete/$1');
+});
+$routes->group('barang-keluar', ['filter' => 'auth'], function ($routes) {
+    $routes->get('/', 'BarangKeluar::index');
+    $routes->get('create', 'BarangKeluar::create');
+    $routes->post('store', 'BarangKeluar::store');
+    $routes->get('edit/(:num)', 'BarangKeluar::edit/$1');
+    $routes->post('update/(:num)', 'BarangKeluar::update/$1');
+    $routes->get('delete/(:num)', 'BarangKeluar::delete/$1');
 });
