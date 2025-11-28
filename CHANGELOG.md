@@ -1,5 +1,33 @@
 # 🧾 Changelog – Inventori Pro (CodeIgniter 4)
 
+## [v0.6.0] – 2025-11-28
+
+### ✨ Penambahan
+
+- Menambahkan tampilan tabel **Data Barang (Master)** pada halaman Dashboard sebagai ringkasan stok terkini.
+- Menambahkan tombol navigasi baru di bagian atas Dashboard:
+  - **Kelola Data Barang**
+  - **Kelola Barang Masuk**
+  - **Kelola Barang Keluar**
+  - **Data Transaksi** (halaman placeholder untuk pengembangan berikutnya)
+- Menambahkan halaman awal CRUD **Master Barang**:
+  - Tabel data barang dinamis (`barang/index.php`)
+  - Form **Tambah Barang**
+  - Form **Edit Barang**
+  - Fitur **Hapus Barang**
+
+### 🔧 Perubahan
+
+- Memindahkan tombol navigasi Dashboard dari posisi lama ke bagian atas card statistik agar lebih mudah diakses.
+- Menyesuaikan controller `Dashboard` untuk mengirimkan data barang (`$items`) ke tabel ringkasan.
+- Menyesuaikan struktur dashboard menjadi lebih informatif dan berorientasi overview.
+
+### 🧹 Pemeliharaan
+
+- Merapikan route `barang` ke dalam group terproteksi `auth`.
+- Menambahkan struktur CRUD penuh untuk `BarangController` (create, read, update, delete).
+- Menjaga data stok master agar hanya berubah berdasarkan transaksi masuk & keluar.
+
 ## [v0.5.0] – 2025-11-19
 
 ### ✨ Penambahan

@@ -14,25 +14,26 @@ class Dashboard extends BaseController
             return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
         }
 
-        // Ambil model
         $barangModel = new BarangModel();
         $barangMasukModel = new BarangMasukModel();
         $barangKeluarModel = new BarangKeluarModel();
 
-        // Data statistik
+        // Statistik
         $totalBarang  = $barangModel->countAllResults();
         $totalMasuk   = $barangMasukModel->countAllResults();
         $totalKeluar  = $barangKeluarModel->countAllResults();
 
-        $data = [
+        // Data barang untuk tabel dashboard
+        $items = $barangModel->findAll();
+
+        return view('dashboard/index', [
             'title'        => 'Dashboard | Inventori Pro',
             'name'         => session()->get('name'),
             'role'         => session()->get('role'),
             'totalBarang'  => $totalBarang,
             'totalMasuk'   => $totalMasuk,
             'totalKeluar'  => $totalKeluar,
-        ];
-
-        return view('dashboard/index', $data);
+            'items'        => $items,
+        ]);
     }
 }
