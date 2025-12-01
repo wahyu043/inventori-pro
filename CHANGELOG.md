@@ -1,5 +1,29 @@
 # 🧾 Changelog – Inventori Pro (CodeIgniter 4)
 
+## [v0.6.2] – 2025-12-01
+
+### ✨ Penambahan
+
+- Menambahkan halaman **Data Transaksi (History)** yang menampilkan gabungan data Barang Masuk dan Barang Keluar.
+- Menambahkan folder view baru `transaksi/index.php` untuk memisahkan modul transaksi dari halaman lain.
+- Menambahkan badge indikator warna (Hijau = Masuk, Merah = Keluar) untuk membedakan jenis transaksi.
+
+### 🔧 Perubahan
+
+- Memperbarui controller `Transaksi` untuk mengambil data dari dua tabel (`barang_masuk` dan `barang_keluar`), lalu menggabungkannya dan mengurutkannya berdasarkan tanggal terbaru.
+- Menyesuaikan struktur routing untuk halaman `/transaksi` agar konsisten dengan modul-modul lain.
+
+### 🐛 Perbaikan Bug
+
+- Mengatasi error `Undefined array key 'tanggal'` dengan menyesuaikan nama kolom (`tanggal_masuk` dan `tanggal_keluar`).
+- Mengatasi error `Undefined array key 'user'` dengan menetapkan placeholder `'-'` karena kolom user belum tersedia pada tabel transaksi.
+- Mengatasi error view `Invalid file: pages/transaksi.php` dengan memperbaiki path view.
+
+### 🧹 Pemeliharaan
+
+- Merapikan struktur view modul agar konsisten (`barang/index`, `barang_masuk/index`, `barang_keluar/index`, `transaksi/index`).
+- Memastikan layout header, sidebar, dan footer ter-render secara konsisten pada modul transaksi.
+
 ## [v0.6.1] – 2025-12-01
 
 ### ✨ Penambahan

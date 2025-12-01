@@ -70,6 +70,12 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     });
 
     // ============================
+    // 📤 Laporan Transaksi Harian
+    // ============================
+    $routes->get('/transaksi', 'Transaksi::index');
+
+
+    // ============================
     // 📤 Cetak laporan harian
     // ============================
     $routes->group('laporan', ['filter' => 'auth'], function ($routes) {
