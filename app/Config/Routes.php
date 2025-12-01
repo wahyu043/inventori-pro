@@ -68,4 +68,13 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         $routes->post('update/(:num)', 'BarangKeluar::update/$1');
         $routes->get('delete/(:num)', 'BarangKeluar::delete/$1');
     });
+
+    // ============================
+    // 📤 Cetak laporan harian
+    // ============================
+    $routes->group('laporan', ['filter' => 'auth'], function ($routes) {
+        $routes->get('/', 'Laporan::index');
+        $routes->get('filter', 'Laporan::filter');
+        $routes->get('pdf', 'Laporan::pdf');
+    });
 });

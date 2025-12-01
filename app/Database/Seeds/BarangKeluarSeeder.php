@@ -4,7 +4,7 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class BarangMasukSeeder extends Seeder
+class BarangKeluarSeeder extends Seeder
 {
     public function run()
     {
@@ -18,31 +18,28 @@ class BarangMasukSeeder extends Seeder
 
         foreach ($file as $index => $line) {
 
-            // Lewati 3 baris header
             if ($index < 3) continue;
 
-            // Parse CSV berdasar koma dan tanda petik
             $cols = str_getcsv($line, ',', "'");
 
             if (count($cols) < 8) continue;
 
             list($no, $tgl, $jenis, $kode, $jumlah, $nama, $faktur, $stok) = $cols;
 
-            if (trim(strtolower($jenis)) !== 'masuk') continue;
+            if (trim(strtolower($jenis)) !== 'keluar') continue;
 
-            // Convert tanggal
             $tglFix = date('Y-m-d', strtotime(str_replace("'", "", $tgl)));
 
-            $this->db->table('barang_masuk')->insert([
+            $this->db->table('barang_keluar')->insert([
                 'kode_barang'    => trim($kode),
                 'nama_barang'    => trim($nama),
                 'jumlah'         => (int) $jumlah,
-                'tanggal_masuk'  => $tglFix,
+                'tanggal_keluar' => $tglFix,
                 'no_faktur'      => trim($faktur),
                 'stok'           => (int) $stok,
             ]);
         }
 
-        echo "BarangMasukSeeder selesai!\n";
+        echo "BarangKeluarSeeder selesai!\n";
     }
 }

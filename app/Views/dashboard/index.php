@@ -11,6 +11,7 @@
         <a href="/barang-masuk" class="btn btn-primary">Kelola Barang Masuk</a>
         <a href="/barang-keluar" class="btn btn-success">Kelola Barang Keluar</a>
         <a href="/transaksi" class="btn btn-dark">Data Transaksi</a>
+        <a href="/laporan" class="btn btn-info">Laporan Transaksi</a>
     </div>
 
     <!-- Card Statistik -->
