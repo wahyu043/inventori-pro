@@ -1,11 +1,12 @@
 <?= $this->include('layouts/header'); ?>
 
 
-<div class="container py-5" style="max-width: 900px;">
+<div class="container py-5" max-width:900px;">
+
     <h3>Laporan Transaksi</h3>
 
     <!-- FILTER PILIHAN -->
-    <form class="mb-4" method="get" action="/laporan/filter">
+    <form class="mb-5" method="get" action="/laporan/filter">
         <label>Pilih Jenis Laporan:</label>
 
         <select name="tipe"
@@ -88,7 +89,7 @@
             <span class="text-primary"><?= $tanggal ?></span>
         </h5>
 
-        <a href="/dashboard" class="btn btn-secondary btn-sm my-3">← Kembali ke Dashboard</a>
+
         <!-- Tombol Cetak PDF -->
         <a class="btn btn-danger btn-sm my-3"
             href="/laporan/pdf?tipe=<?= $tipe ?>&tanggal=<?= $tanggal ?>&m=<?= urlencode(json_encode($masuk)) ?>&k=<?= urlencode(json_encode($keluar)) ?>"
@@ -149,5 +150,8 @@
         </table>
     <?php endif; ?>
 </div>
+
+<div style="height: 50px;"></div>
+
 
 <?= $this->include('layouts/footer'); ?>

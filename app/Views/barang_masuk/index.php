@@ -3,7 +3,6 @@
 <div class="container mt-4">
     <h2>Data Barang Masuk</h2>
     <div class="d-flex justify-content-between mb-3">
-        <a href="/dashboard" class="btn btn-secondary mb-3">← Kembali ke Dashboard</a>
         <a href="/barang-masuk/create" class="btn btn-primary mb-3">+ Tambah Data</a>
     </div>
     <?php if (session()->getFlashdata('success')): ?>

@@ -4,7 +4,6 @@
     <h2>Data Barang Keluar</h2>
 
     <div class="d-flex justify-content-between mb-3">
-        <a href="/dashboard" class="btn btn-secondary">← Kembali ke Dashboard</a>
         <a href="/barang-keluar/create" class="btn btn-primary">+ Tambah Data</a>
     </div>
 

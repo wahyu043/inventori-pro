@@ -1,5 +1,28 @@
 # 🧾 Changelog – Inventori Pro (CodeIgniter 4)
 
+## [v0.6.1] – 2025-12-01
+
+### ✨ Penambahan
+
+- Menambahkan sidebar navigasi permanen untuk seluruh halaman private (Dashboard, Data Barang, Barang Masuk, Barang Keluar, Data Transaksi, dan Laporan).
+- Menambahkan layout baru beranda dengan form login langsung di halaman utama.
+- Menambahkan dua jenis footer terpisah:
+  - `footer_public` untuk halaman beranda/login.
+  - `footer_private` untuk halaman setelah login.
+
+### 🔧 Perubahan
+
+- Memindahkan tombol aksi Dashboard (Kelola Barang, Barang Masuk, Barang Keluar, dll) ke dalam sidebar agar lebih konsisten.
+- Mengimplementasikan wrapper `<main>` dinamis untuk semua halaman private agar layout flex bekerja lebih rapi.
+- Menyesuaikan tampilan halaman Laporan agar tidak menggantung dan responsif terhadap footer sticky.
+- Menyesuaikan header layout untuk menutup wrapper content dan `<main>` otomatis di halaman private.
+
+### 🧹 Pemeliharaan
+
+- Membersihkan struktur layout global dan merapikan pemanggilan footer agar tidak mengganggu halaman public.
+- Menambahkan padding dan jarak vertikal agar halaman private lebih seimbang dan tidak tampak menggantung.
+- Memastikan seluruh halaman (Dashboard, CRUD Barang, Laporan) mengikuti struktur layout baru yang konsisten.
+
 ## [v0.6.0] – 2025-11-28
 
 ### ✨ Penambahan

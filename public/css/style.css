@@ -12,8 +12,15 @@ body {
 }
 
 main {
-    flex: 1;
     /* konten utama isi ruang tengah */
+    flex: 1;
+    min-height: 70vh;
+    padding-bottom: 60px;
+}
+
+main > .container {
+    min-height: 75vh;
+    padding-bottom: 60px;
 }
 
 footer {

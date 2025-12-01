@@ -2,7 +2,6 @@
 
 <div class="container mt-4">
     <h3>Data Barang (Master)</h3>
-    <a href="/dashboard" class="btn btn-secondary mb-3">← Kembali ke Dashboard</a>
     <a href="/barang/create" class="btn btn-primary mb-3">Tambah Barang</a>
 
     <table class="table table-bordered table-striped">

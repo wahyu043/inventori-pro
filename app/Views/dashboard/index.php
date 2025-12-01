@@ -6,13 +6,13 @@
     <p class="text-muted">Anda login sebagai <strong><?= esc($role); ?></strong>.</p>
 
     <!-- Tombol Aksi di Atas -->
-    <div class="mb-4">
+    <!-- <div class="mb-4">
         <a href="/barang" class="btn btn-secondary">Kelola Data Barang</a>
         <a href="/barang-masuk" class="btn btn-primary">Kelola Barang Masuk</a>
         <a href="/barang-keluar" class="btn btn-success">Kelola Barang Keluar</a>
         <a href="/transaksi" class="btn btn-dark">Data Transaksi</a>
         <a href="/laporan" class="btn btn-info">Laporan Transaksi</a>
-    </div>
+    </div> -->
 
     <!-- Card Statistik -->
     <div class="row">

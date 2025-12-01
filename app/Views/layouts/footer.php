@@ -1,6 +1,9 @@
-<footer class="bg-primary text-white text-center py-3 mt-auto">
-    <small>© 2025 Wahyu Mahmudiyanto. All rights reserved.</small>
-</footer>
+<?php if (session()->get('logged_in')): ?>
+    <?= $this->include('layouts/footer_private'); ?>
+<?php else: ?>
+    <?= $this->include('layouts/footer_public'); ?>
+<?php endif; ?>
+
 
 
 <!-- Bootstrap JS -->
