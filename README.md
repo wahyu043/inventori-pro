@@ -1,69 +1,84 @@
 # 🧩 Implementasi Aplikasi Manajemen Gudang Menggunakan CodeIgniter 4 (Refactor Tes Skill 2021)
 
 ## 📘 Deskripsi Proyek
+
 Proyek ini merupakan implementasi ulang dari tes skill Software Developer tahun 2021 yang berfokus pada pembuatan aplikasi manajemen data barang sederhana.  
 Versi ini dibuat ulang dengan pendekatan **MVC (Model-View-Controller)** menggunakan framework **CodeIgniter 4**, dengan tujuan:
+
 - Melatih pemahaman arsitektur modern di PHP.
 - Menunjukkan kemampuan refactor dan strukturisasi proyek.
 - Meningkatkan kualitas kode agar lebih maintainable dan scalable.
 
 ---
 
-## ⚙️ Fitur yang Dibangun
-Berdasarkan instruksi asli tes skill, aplikasi ini memiliki fitur utama berikut:
+## 🚀 Fitur Utama
 
-- 🔐 **Halaman Login (sederhana)**  
-  Terdapat dua role utama:
-  - `admin` (pengelola utama)
-  - `user1` (penjaga toko)
+### 🔐 Autentikasi
 
-- 📦 **CRUD Data Barang Masuk**  
-  Form input dan daftar data barang yang baru masuk ke gudang.
+- Login berbasis database (akun `admin` & `user1`)
+- Proteksi session & halaman dengan filter `auth`
 
-- 🚚 **CRUD Data Barang Keluar**  
-  Menampilkan dan mengatur data barang yang keluar dari stok gudang.
+### 📦 Barang Masuk (CRUD)
 
-- 🏷️ **CRUD Data Barang Tersisa di Gudang**  
-  Menampilkan stok tersisa berdasarkan perhitungan masuk dan keluar.
+- Tambah, edit, hapus
+- Otomatis menambah stok master barang
 
-- 🔁 **CRUD Data Transaksi**  
-  Menyimpan dan menampilkan catatan aktivitas transaksi barang.
+### 🚚 Barang Keluar (CRUD)
 
-- 📊 **Halaman Laporan (Read Only)**  
-  Menampilkan data:
-  - Barang  
-  - Perusahaan  
-  - Transaksi  
-  Serta menyediakan tombol ekspor ke format `.csv` atau `.xlsx`.
+- Tambah, edit, hapus
+- Otomatis mengurangi stok master barang
+
+### 📊 Data Barang (Master)
+
+- Data barang lengkap + stok terupdate
+- Integrasi dengan transaksi masuk & keluar
+
+### 🔁 **Data Transaksi (History)** — _NEW_
+
+- Halaman khusus gabungan barang masuk & keluar
+- Ditampilkan dalam satu timeline history
+- Urut terbaru → terlama
+- Badge warna (Hijau = Masuk, Merah = Keluar)
+
+### 📝 Laporan
+
+- Laporan harian, mingguan, bulanan
+- Filter dinamis (per tanggal)
+- Layout rapi dengan tampilan bootstrap
 
 ---
 
-## 🧱 Struktur Proyek
-Proyek ini menggunakan struktur default CodeIgniter 4 dengan beberapa tambahan direktori:
+## 📂 Struktur Proyek
 
 ```
 app/
  ├── Controllers/
  │    ├── Auth.php
+ │    ├── Dashboard.php
+ │    ├── Barang.php
  │    ├── BarangMasuk.php
  │    ├── BarangKeluar.php
- │    ├── BarangTersisa.php
- │    ├── Transaksi.php
+ │    ├── Transaksi.php   ← NEW
  │    └── Laporan.php
  ├── Models/
  │    ├── UserModel.php
  │    ├── BarangModel.php
- │    ├── TransaksiModel.php
+ │    ├── BarangMasukModel.php
+ │    ├── BarangKeluarModel.php
  │    └── LaporanModel.php
  ├── Views/
- │    ├── layout/
+ │    ├── layouts/
  │    ├── auth/
- │    └── pages/
- │         ├── barang_masuk.php
- │         ├── barang_keluar.php
- │         ├── barang_tersisa.php
- │         ├── transaksi.php
- │         └── laporan.php
+ │    ├── barang/
+ │    │     └── index.php
+ │    ├── barang_masuk/
+ │    │     └── index.php
+ │    ├── barang_keluar/
+ │    │     └── index.php
+ │    ├── transaksi/
+ │    │     └── index.php   ← NEW
+ │    └── laporan/
+ │          └── index.php
 public/
  ├── css/
  ├── js/
@@ -72,30 +87,39 @@ public/
 
 ---
 
-## 🗄️ Database Dummy
-Database dummy akan diunggah terpisah (`inventory_pro.sql`) dan mencakup tabel-tabel berikut:
-- `users` → berisi akun login (`admin`, `user1`)
-- `barang_masuk`
-- `barang_keluar`
-- `barang_sisa`
-- `transaksi`
-- `perusahaan` *(opsional untuk laporan)*
+## 🗄️ Database
 
----
+Database dummy (25 master barang + contoh transaksi) tersedia dalam file:
+
+```
+writable/dummy/inventori_pro.sql
+```
+
+Tabel-tabel utama:
+
+- users
+- barang
+- barang_masuk
+- barang_keluar
+- transaksi (history gabungan dihasilkan lewat controller)
 
 ## 🚀 Cara Menjalankan
+
 1. Clone repository ini:
+
    ```bash
    git clone https://github.com/wahyu043/inventori-pro
    cd inventori-pro
    ```
 
 2. Install dependencies CodeIgniter:
+
    ```bash
    composer install
    ```
 
 3. Jalankan server pengembangan:
+
    ```bash
    php spark serve
    ```
@@ -106,13 +130,15 @@ Database dummy akan diunggah terpisah (`inventory_pro.sql`) dan mencakup tabel-t
 ---
 
 ## 🧠 Tujuan Pembelajaran
-- Meningkatkan pemahaman konsep **MVC dan Routing di CodeIgniter 4**  
-- Refactor kode procedural ke **struktur berorientasi objek (OOP)**  
+
+- Meningkatkan pemahaman konsep **MVC dan Routing di CodeIgniter 4**
+- Refactor kode procedural ke **struktur berorientasi objek (OOP)**
 - Menunjukkan kemampuan dalam membuat **aplikasi CRUD terintegrasi login system**
 
 ---
 
 ## 🧑‍💻 Author
+
 **Wahyu Mahmudiyanto**  
 SEO Specialist & Web Developer — CV. Agro Sukses Abadi  
 📍 Yogyakarta / Temanggung  
@@ -122,13 +148,19 @@ SEO Specialist & Web Developer — CV. Agro Sukses Abadi
 ---
 
 ## 📅 Status Proyek
-- ✅ Setup CodeIgniter via Composer  
-- ✅ Konfigurasi Database & Migrasi User  
-- 🕐 Next: Implementasi Controller & View untuk Halaman Login  
-- 🔜 Tahap Berikutnya: CRUD Barang Masuk  
+
+- v0.1.0 – Setup CI4
+- v0.3.0 – Login & Auth
+- v0.4.0 – Dashboard
+- v0.5.0 – Integrasi Master Barang
+- v0.6.1 – Sidebar & Layout Consolidation
+- **v0.6.2 – Penambahan Data Transaksi (History)** ✔️
+
+Proyek dinyatakan **stabil & siap dikembangkan ke tahap berikutnya**.
 
 ---
 
 ## 🏁 Catatan Akhir
+
 Proyek ini merupakan **refactor modern** berdasarkan soal tes skill lama.  
 Fokus utamanya adalah **membuktikan pemahaman fundamental PHP & framework CI** dengan gaya dokumentasi profesional seperti proyek fullstack modern.
